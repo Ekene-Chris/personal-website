@@ -5,10 +5,13 @@ import {
   FaRocket,
   FaCompass,
   FaServer,
-  FaGlobeAfrica,
-  FaLevelUpAlt,
+  FaEarthAfrica,
+  FaArrowUpRightDots,
   FaUsers,
-} from "react-icons/fa";
+  FaLinkedin,
+  FaTwitter,
+  FaGithub,
+} from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -293,7 +296,7 @@ export default function Home() {
                 opportunities
               </p>
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
-                <FaGlobeAfrica />
+                <FaEarthAfrica />
               </div>
               <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition">
                 Coming Soon
@@ -307,7 +310,7 @@ export default function Home() {
                 to senior roles
               </p>
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
-                <FaLevelUpAlt />
+                <FaArrowUpRightDots />
               </div>
               <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition">
                 Coming Soon
@@ -330,7 +333,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section (continued) */}
       <section className="py-20 bg-linen">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">

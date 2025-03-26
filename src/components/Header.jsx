@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa6";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

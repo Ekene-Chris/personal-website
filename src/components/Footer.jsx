@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaLinkedin, FaTwitter, FaGithub, FaGlobe } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaGithub, FaGlobe } from "react-icons/fa6";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
