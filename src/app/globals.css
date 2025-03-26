@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --linen: #fff4e9;
+  --black: #111111;
+  --caput-mortuum: #592429;
+  --kombu-green: #2b3b2e;
+  --gold: #ffd700;
+}
+
+body {
+  font-family: "Avenir", "Montserrat", sans-serif;
+  background-color: var(--linen);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+.script-accent {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+
+/* Hero gradient background */
+.hero-gradient {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card hover effects */
+.expertise-card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
