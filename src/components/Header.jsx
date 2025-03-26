@@ -1,52 +1,77 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { FaBars, FaTimes } from "react-icons/fa6";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Add scroll effect to header
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed w-full bg-black text-linen z-40">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav
+      className={`fixed w-full z-40 transition-all duration-300 ${
+        scrolled
+          ? "bg-black text-linen py-2 shadow-lg"
+          : "bg-black bg-opacity-90 text-linen py-4"
+      }`}
+    >
+      <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <span className="text-xl font-bold">Ekene Chris</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <Link href="/" className="hover:text-gold transition duration-200">
+        <div className="hidden md:flex space-x-6 items-center">
+          <Link
+            href="/"
+            className="hover:text-gold transition duration-200 py-2"
+          >
             Home
           </Link>
           <Link
             href="/about"
-            className="hover:text-gold transition duration-200"
+            className="hover:text-gold transition duration-200 py-2"
           >
             About
           </Link>
           <Link
             href="/blog"
-            className="hover:text-gold transition duration-200"
+            className="hover:text-gold transition duration-200 py-2"
           >
             Blog
           </Link>
           <Link
             href="/resources"
-            className="hover:text-gold transition duration-200"
+            className="hover:text-gold transition duration-200 py-2"
           >
             Resources
           </Link>
           <Link
             href="/contact"
-            className="hover:text-gold transition duration-200"
+            className="hover:text-gold transition duration-200 py-2"
           >
             Contact
           </Link>
           <Link
             href="/contact"
-            className="bg-caput-mortuum hover:bg-opacity-90 px-4 py-2 rounded ml-4 transition duration-200"
+            className="bg-caput-mortuum hover:bg-opacity-90 px-5 py-2 rounded transition duration-200 ml-2"
           >
             Work With Me
           </Link>
@@ -57,6 +82,7 @@ export const Header = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-linen focus:outline-none"
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? (
               <FaTimes className="h-6 w-6" />
@@ -108,7 +134,7 @@ export const Header = () => {
             </Link>
             <Link
               href="/contact"
-              className="bg-caput-mortuum hover:bg-opacity-90 px-4 py-2 rounded inline-block transition duration-200"
+              className="bg-caput-mortuum hover:bg-opacity-90 px-4 py-2 rounded inline-block transition duration-200 mt-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Work With Me

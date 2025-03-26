@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // Add this for static export
-  distDir: ".next", // Specify the build output directory
+  output: "export", // Enable static exports
+  // Workaround for image optimization with static export
   images: {
-    unoptimized: true, // Required for static export with images
+    unoptimized: true,
   },
-  // Keep any other options you had before
+  // Fix for trailing slashes
+  trailingSlash: true,
+  // Ensure base path is correct for deployment
+  basePath: "",
 };
 
 module.exports = nextConfig;
