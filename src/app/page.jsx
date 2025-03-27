@@ -392,7 +392,7 @@ export default function Home() {
               <FaLinkedin size={20} />
             </a>
             <a
-              href="https://twitter.com/ekenechris"
+              href="https://x.com/iamekenechris"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 bg-black flex items-center justify-center rounded-full text-white hover:bg-caput-mortuum transition"
