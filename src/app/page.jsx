@@ -274,59 +274,65 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg transition hover:transform hover:translate-y-[-10px] duration-300 relative overflow-hidden">
-              <h3 className="text-xl font-bold mb-2">
+            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+              <h3 className="text-xl font-bold mb-2 relative z-10">
                 DevOps Architect's Playbook
               </h3>
-              <p className="mb-6">
+              <p className="mb-6 relative z-10">
                 Deep dives into advanced technical concepts with real-world
                 applications
               </p>
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaServer />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition">
+              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
                 Coming Soon
               </button>
             </div>
 
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg transition hover:transform hover:translate-y-[-10px] duration-300 relative overflow-hidden">
-              <h3 className="text-xl font-bold mb-2">Global Engineer</h3>
-              <p className="mb-6">
+            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+              <h3 className="text-xl font-bold mb-2 relative z-10">
+                Global Engineer
+              </h3>
+              <p className="mb-6 relative z-10">
                 Insights on bridging the gap between local experience and global
                 opportunities
               </p>
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaEarthAfrica />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition">
+              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
                 Coming Soon
               </button>
             </div>
 
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg transition hover:transform hover:translate-y-[-10px] duration-300 relative overflow-hidden">
-              <h3 className="text-xl font-bold mb-2">From Mid to Senior</h3>
-              <p className="mb-6">
+            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+              <h3 className="text-xl font-bold mb-2 relative z-10">
+                From Mid to Senior
+              </h3>
+              <p className="mb-6 relative z-10">
                 Specific technical skills and mindset shifts required to advance
                 to senior roles
               </p>
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaArrowUpRightDots />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition">
+              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
                 Coming Soon
               </button>
             </div>
 
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg transition hover:transform hover:translate-y-[-10px] duration-300 relative overflow-hidden">
-              <h3 className="text-xl font-bold mb-2">African Tech Leaders</h3>
-              <p className="mb-6">
+            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+              <h3 className="text-xl font-bold mb-2 relative z-10">
+                African Tech Leaders
+              </h3>
+              <p className="mb-6 relative z-10">
                 Interviews with successful African engineers in global companies
               </p>
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaUsers />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition">
+              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
                 Coming Soon
               </button>
             </div>
