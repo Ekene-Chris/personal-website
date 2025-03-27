@@ -87,7 +87,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="expertise-card bg-black bg-opacity-30 p-8 rounded-lg transition duration-300">
+            <div className="expertise-card bg-caput-mortuum bg-opacity-30 p-8 rounded-lg transition duration-300">
               <div className="text-caput-mortuum text-4xl mb-6">
                 <FaCloud />
               </div>
@@ -116,7 +116,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="expertise-card bg-black bg-opacity-30 p-8 rounded-lg transition duration-300">
+            <div className="expertise-card bg-caput-mortuum bg-opacity-30 p-8 rounded-lg transition duration-300">
               <div className="text-caput-mortuum text-4xl mb-6">
                 <FaRocket />
               </div>
@@ -145,7 +145,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="expertise-card bg-black bg-opacity-30 p-8 rounded-lg transition duration-300">
+            <div className="expertise-card bg-caput-mortuum bg-opacity-30 p-8 rounded-lg transition duration-300">
               <div className="text-caput-mortuum text-4xl mb-6">
                 <FaCompass />
               </div>
@@ -188,7 +188,7 @@ export default function Home() {
             <div className="content-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
               <div className="h-48 bg-gray-200 relative">
                 <Image
-                  src="/images/deploy.svg"
+                  src="/images/content-1.jpg"
                   alt="Content"
                   fill
                   className="object-cover"
@@ -274,7 +274,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+            <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
               <h3 className="text-xl font-bold mb-2 relative z-10">
                 DevOps Architect's Playbook
               </h3>
@@ -290,7 +290,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+            <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
               <h3 className="text-xl font-bold mb-2 relative z-10">
                 Global Engineer
               </h3>
@@ -306,7 +306,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+            <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
               <h3 className="text-xl font-bold mb-2 relative z-10">
                 From Mid to Senior
               </h3>
@@ -322,7 +322,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
+            <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
               <h3 className="text-xl font-bold mb-2 relative z-10">
                 African Tech Leaders
               </h3>

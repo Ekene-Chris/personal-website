@@ -111,28 +111,13 @@ export default function About() {
               <div className="border-l-4 border-caput-mortuum pl-6 relative">
                 <div className="w-4 h-4 bg-caput-mortuum rounded-full absolute -left-[10px] top-1"></div>
                 <h3 className="text-xl font-bold">Co-Founder & CEO</h3>
-                <h4 className="text-lg text-caput-mortuum mb-2">
-                  Teleios Technologies
-                </h4>
-                <p className="text-gray-500 mb-4">2021 - Present</p>
+                <h4 className="text-lg text-caput-mortuum mb-2">Teleios</h4>
+                <p className="text-gray-500 mb-4">January 2025 - Present</p>
                 <p className="text-lg">
-                  Leading the development of AI-powered learning platforms for
-                  engineers, with a focus on DevOps, cloud architecture, and
-                  system design. Building pathways for African engineers to
-                  access global opportunities through strategic upskilling.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-caput-mortuum pl-6 relative">
-                <div className="w-4 h-4 bg-caput-mortuum rounded-full absolute -left-[10px] top-1"></div>
-                <h3 className="text-xl font-bold">Technical Director</h3>
-                <h4 className="text-lg text-caput-mortuum mb-2">Kuda Bank</h4>
-                <p className="text-gray-500 mb-4">2018 - 2021</p>
-                <p className="text-lg">
-                  Led the technical infrastructure design and implementation for
-                  one of Africa's fastest-growing fintech companies. Established
-                  DevOps practices and built scalable cloud infrastructure
-                  supporting millions of users.
+                  Teleios is an elite, AI-Powered tech learning experience that
+                  transforms Africa's most ambitious engineers into world-class
+                  technical leaders through advanced curriculum, real-world
+                  projects, and expert mentorship.
                 </p>
               </div>
 
@@ -140,12 +125,25 @@ export default function About() {
                 <div className="w-4 h-4 bg-caput-mortuum rounded-full absolute -left-[10px] top-1"></div>
                 <h3 className="text-xl font-bold">Senior DevOps Engineer</h3>
                 <h4 className="text-lg text-caput-mortuum mb-2">Andela</h4>
-                <p className="text-gray-500 mb-4">2015 - 2018</p>
+                <p className="text-gray-500 mb-4">October 2024 - Present</p>
                 <p className="text-lg">
-                  Developed and maintained critical infrastructure for partner
-                  companies. Mentored junior engineers and established best
+                  Developing and maintaining critical infrastructure for partner
+                  companies. Mentoring junior engineers and establishing best
                   practices for cloud resource management and deployment
                   pipelines.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-caput-mortuum pl-6 relative">
+                <div className="w-4 h-4 bg-caput-mortuum rounded-full absolute -left-[10px] top-1"></div>
+                <h3 className="text-xl font-bold">Senior DevOps Engineer</h3>
+                <h4 className="text-lg text-caput-mortuum mb-2">Kuda Bank</h4>
+                <p className="text-gray-500 mb-4">March 2021 - October 2024</p>
+                <p className="text-lg">
+                  Led the technical infrastructure design and implementation for
+                  one of Africa's fastest-growing fintech companies. Established
+                  DevOps practices and built scalable cloud infrastructure
+                  supporting millions of users.
                 </p>
               </div>
             </div>

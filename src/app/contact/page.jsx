@@ -25,12 +25,35 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // This is a placeholder for form submission logic
-    // In a real application, you would send the form data to an API
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Replace with your actual Google Form URL and field entry IDs
+      // You'll need to inspect the Google Form to get the entry IDs
+      const googleFormUrl = "https://forms.gle/Ed9Uniri2D7cDjmE6";
 
+      const formEntryIDs = {
+        name: "entry.1664869934", // Replace with actual entry ID
+        email: "entry.1700356717", // Replace with actual entry ID
+        subject: "entry.235121228", // Replace with actual entry ID
+        message: "entry.1421278832", // Replace with actual entry ID
+      };
+
+      // Create form data for submission
+      const googleFormData = new FormData();
+      googleFormData.append(formEntryIDs.name, formData.name);
+      googleFormData.append(formEntryIDs.email, formData.email);
+      googleFormData.append(formEntryIDs.subject, formData.subject);
+      googleFormData.append(formEntryIDs.message, formData.message);
+
+      // Note: Due to CORS restrictions, we use a no-cors request
+      // This means we won't get a response to confirm success/failure
+      // But the form will still be submitted in most cases
+      await fetch(googleFormUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: googleFormData,
+      });
+
+      // Since we can't get actual confirmation due to CORS, we assume success
       // Reset form
       setFormData({
         name: "",
@@ -44,6 +67,7 @@ export default function Contact() {
         message: "Your message has been sent. I will get back to you soon!",
       });
     } catch (error) {
+      console.error("Error submitting form:", error);
       setSubmitStatus({
         success: false,
         message: "There was an error sending your message. Please try again.",
@@ -84,6 +108,46 @@ export default function Contact() {
                   </p>
 
                   <ul className="space-y-4">
+                    <li className="flex items-center">
+                      <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
+                        <FaEnvelope />
+                      </div>
+                      <a
+                        href="mailto:ekenechris77@gmail.com"
+                        className="text-caput-mortuum hover:underline"
+                      >
+                        ekenechris77@gmail.com
+                      </a>
+                    </li>
+
+                    <li className="flex items-center">
+                      <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
+                        <FaLinkedin />
+                      </div>
+                      <a
+                        href="https://www.linkedin.com/in/ekene-chris"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-caput-mortuum hover:underline"
+                      >
+                        linkedin.com/in/ekene-chris
+                      </a>
+                    </li>
+
+                    <li className="flex items-center">
+                      <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
+                        <FaTwitter />
+                      </div>
+                      <a
+                        href="https://x.com/iamekenechris"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-caput-mortuum hover:underline"
+                      >
+                        x.com/iamekenechris
+                      </a>
+                    </li>
+
                     <li className="flex items-center">
                       <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
                         <FaGithub />
