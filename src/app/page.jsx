@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import TestimonialSection from "@/components/TestimonialSection";
 import {
   FaCloud,
   FaRocket,
@@ -187,7 +188,7 @@ export default function Home() {
             <div className="content-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
               <div className="h-48 bg-gray-200 relative">
                 <Image
-                  src="/images/content-1.jpg"
+                  src="/images/deploy.svg"
                   alt="Content"
                   fill
                   className="object-cover"
@@ -333,71 +334,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section (continued) */}
-      <section className="py-20 bg-linen">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="section-title">What People Say</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-caput-mortuum rounded-full flex items-center justify-center text-white mr-4">
-                  <span className="font-bold">JD</span>
-                </div>
-                <div>
-                  <h4 className="font-bold">James Daniel</h4>
-                  <p className="text-sm text-gray-600">
-                    Senior DevOps Engineer, Microsoft
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "Ekene's mentorship transformed my approach to cloud
-                infrastructure. His guidance helped me secure a senior role at
-                Microsoft within just 8 months of working together."
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-caput-mortuum rounded-full flex items-center justify-center text-white mr-4">
-                  <span className="font-bold">NO</span>
-                </div>
-                <div>
-                  <h4 className="font-bold">Ngozi Ola</h4>
-                  <p className="text-sm text-gray-600">Cloud Architect, AWS</p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "The technical leadership training I received from Ekene gave me
-                the confidence to lead complex projects at scale. His insights
-                are practical and immediately applicable."
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-caput-mortuum rounded-full flex items-center justify-center text-white mr-4">
-                  <span className="font-bold">TK</span>
-                </div>
-                <div>
-                  <h4 className="font-bold">Tunde Kajogbola</h4>
-                  <p className="text-sm text-gray-600">
-                    DevOps Team Lead, Shopify
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "Working with Ekene helped me transition from a local company to
-                a global tech leader. His frameworks for technical excellence
-                and communication are game-changers."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Testimonials Section - Using the new component */}
+      <TestimonialSection />
 
       {/* Newsletter Section */}
       <section className="py-20 bg-kombu-green text-white">
