@@ -21,7 +21,7 @@ export default function Home() {
       <section className="hero-gradient h-screen flex items-center pt-20 relative">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-bg.svg"
+            src="/images/hero-bg.jpg"
             alt="Background"
             fill
             priority
@@ -52,7 +52,7 @@ export default function Home() {
           <div className="md:w-1/3 mt-10 md:mt-0 flex justify-center">
             <div className="relative rounded-full overflow-hidden w-64 h-64 border-4 border-white shadow-lg">
               <Image
-                src="/images/ekene-profile.svg"
+                src="/images/ekene-profile.jpg"
                 alt="Ekene Chris"
                 fill
                 className="object-cover"

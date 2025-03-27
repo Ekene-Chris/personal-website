@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
@@ -12,6 +12,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,35 +27,42 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Replace with your actual Google Form URL and field entry IDs
-      // You'll need to inspect the Google Form to get the entry IDs
-      const googleFormUrl = "https://forms.gle/Ed9Uniri2D7cDjmE6";
+      // Extract the form ID from your Google Form URL
+      // The URL format is: https://docs.google.com/forms/d/e/[FORM_ID]/viewform
+      // Example: 1FAIpQLSemPxrlB9PvisiofQFbboDvUN7l6_pb8qeWY4ZLNk7sPyMg4A
+      const formId = "1FAIpQLSemPxrlB9PvisiofQFbboDvUN7l6_pb8qeWY4ZLNk7sPyMg4A";
 
-      const formEntryIDs = {
-        name: "entry.1664869934", // Replace with actual entry ID
-        email: "entry.1700356717", // Replace with actual entry ID
-        subject: "entry.235121228", // Replace with actual entry ID
-        message: "entry.1421278832", // Replace with actual entry ID
+      // These must match your Google Form's entry IDs exactly
+      // You'll need to inspect your Google Form to get these
+      const entryIds = {
+        name: "entry.1664869934", // Replace with your actual entry ID
+        email: "entry.1700356717", // Replace with your actual entry ID
+        subject: "entry.235121228", // Replace with your actual entry ID
+        message: "entry.1421278832", // Replace with your actual entry ID
       };
 
-      // Create form data for submission
-      const googleFormData = new FormData();
-      googleFormData.append(formEntryIDs.name, formData.name);
-      googleFormData.append(formEntryIDs.email, formData.email);
-      googleFormData.append(formEntryIDs.subject, formData.subject);
-      googleFormData.append(formEntryIDs.message, formData.message);
+      // Create a hidden form element to submit
+      const form = document.createElement("form");
+      form.action = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+      form.method = "POST";
+      form.target = "_blank"; // This opens the response in a new tab
+      form.style.display = "none";
 
-      // Note: Due to CORS restrictions, we use a no-cors request
-      // This means we won't get a response to confirm success/failure
-      // But the form will still be submitted in most cases
-      await fetch(googleFormUrl, {
-        method: "POST",
-        mode: "no-cors",
-        body: googleFormData,
+      // Add form fields with the correct entry IDs
+      Object.entries(entryIds).forEach(([key, entryId]) => {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.name = entryId;
+        input.value = formData[key];
+        form.appendChild(input);
       });
 
-      // Since we can't get actual confirmation due to CORS, we assume success
-      // Reset form
+      // Append to document, submit, and then remove
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      // Reset the form
       setFormData({
         name: "",
         email: "",
@@ -64,7 +72,8 @@ export default function Contact() {
 
       setSubmitStatus({
         success: true,
-        message: "Your message has been sent. I will get back to you soon!",
+        message:
+          "Your message has been submitted successfully! Thank you for reaching out.",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
