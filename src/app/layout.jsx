@@ -2,6 +2,7 @@
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata = {
   title: "Ekene Chris | DevOps Architect",
@@ -21,6 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
+        {/* Google Analytics */}
+        <GoogleAnalytics
+          GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+        />
+
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
