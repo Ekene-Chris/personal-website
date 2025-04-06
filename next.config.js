@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // Enable static exports
-  // Workaround for image optimization with static export
+  // Remove this line:
+  // output: "export",
+
+  // Keep the rest of your configuration:
   images: {
     unoptimized: true,
   },
-  // Fix for trailing slashes
   trailingSlash: true,
-  // Ensure base path is correct for deployment
   basePath: "",
 };
 
