@@ -199,3 +199,16 @@ export default async function BlogPost({ params }) {
     </div>
   );
 }
+export async function generateStaticParams() {
+  // Fetch all post slugs from your CMS
+  const posts = await client.fetch(`
+      *[_type == "post"] {
+        "slug": slug.current
+      }
+    `);
+
+  // Return an array of objects with the slug property
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}

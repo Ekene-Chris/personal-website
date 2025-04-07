@@ -23,24 +23,28 @@ export async function getAllPosts() {
 
 // Function to fetch a single post by slug
 export async function getPostBySlug(slug) {
-  const post = await client.fetch(
-    `
-    *[_type == "post" && slug.current == $slug][0] {
-      _id,
-      title,
-      slug,
-      body,
-      mainImage,
-      publishedAt,
-      "categories": categories[]->title,
-      "author": author->{name, image, bio},
-    }
-  `,
-    { slug }
-  );
+  if (!slug) return null;
 
-  return post;
+  try {
+    const post = await client.fetch(
+      `
+      *[_type == "post" && slug.current == $slug][0] {
+        _id,
+        title,
+        slug,
+        body,
+        mainImage,
+        publishedAt,
+        "categories": categories[]->title,
+        "author": author->{name, image, bio},
+      }
+    `,
+      { slug }
+    );
+
+    return post;
+  } catch (error) {
+    console.error(`Error fetching post with slug "${slug}":`, error);
+    return null;
+  }
 }
-
-// Export the image URL builder function from Sanity
-export { urlFor };
