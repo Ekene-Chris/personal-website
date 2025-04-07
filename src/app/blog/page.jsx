@@ -5,6 +5,8 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { getAllPosts } from "@/lib/sanity";
 import { urlFor } from "@/sanity/lib/image";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Blog | Ekene Chris",
   description:
