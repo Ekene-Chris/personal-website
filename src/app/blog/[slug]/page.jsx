@@ -110,7 +110,11 @@ export default async function BlogPost({ params }) {
             </div>
             <div className="flex items-center mr-6 mb-2">
               <FaUser className="mr-2" />
-              <span>{post.author}</span>
+              <span>
+                {typeof post.author === "string"
+                  ? post.author
+                  : post.author?.name || "Anonymous"}
+              </span>
             </div>
             {post.categories && post.categories.length > 0 && (
               <div className="flex items-center mb-2">
@@ -158,7 +162,7 @@ export default async function BlogPost({ params }) {
                   <div className="w-16 h-16 relative rounded-full overflow-hidden mr-4">
                     <Image
                       src={urlFor(post.author.image).url()}
-                      alt={post.author.name}
+                      alt={post.author.name || "Author"}
                       fill
                       className="object-cover"
                     />
@@ -166,11 +170,18 @@ export default async function BlogPost({ params }) {
                 )}
                 <div>
                   <h3 className="text-xl font-bold">
-                    About {post.author.name}
+                    About{" "}
+                    {typeof post.author === "string"
+                      ? post.author
+                      : post.author.name || "the Author"}
                   </h3>
                   {post.author.bio && (
                     <div className="text-gray-700 mt-2">
-                      <PortableText value={post.author.bio} />
+                      {typeof post.author.bio === "string" ? (
+                        <p>{post.author.bio}</p>
+                      ) : (
+                        <PortableText value={post.author.bio} />
+                      )}
                     </div>
                   )}
                 </div>
@@ -199,6 +210,7 @@ export default async function BlogPost({ params }) {
     </div>
   );
 }
+
 export async function generateStaticParams() {
   // Fetch all post slugs from your CMS
   const posts = await client.fetch(`
