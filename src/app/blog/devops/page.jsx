@@ -8,13 +8,13 @@ import { PortableText } from "@portabletext/react";
 
 export async function generateMetadata({ params }) {
   const post = await getPostBySlug(params.slug);
-  
+
   if (!post) {
     return {
       title: "Post Not Found",
     };
   }
-  
+
   return {
     title: `${post.title} | Ekene Chris Blog`,
     description: post.excerpt || `Read ${post.title} on Ekene Chris's blog`,
@@ -41,9 +41,11 @@ const portableTextComponents = {
   },
   marks: {
     link: ({ children, value }) => {
-      const rel = !value.href.startsWith("/") ? "noreferrer noopener" : undefined;
+      const rel = !value.href.startsWith("/")
+        ? "noreferrer noopener"
+        : undefined;
       return (
-        
+        <a
           href={value.href}
           rel={rel}
           className="text-caput-mortuum underline"
@@ -55,10 +57,18 @@ const portableTextComponents = {
     },
   },
   block: {
-    h1: ({ children }) => <h1 className="text-3xl font-bold my-6">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-2xl font-bold my-5">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-xl font-bold my-4">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-lg font-bold my-3">{children}</h4>,
+    h1: ({ children }) => (
+      <h1 className="text-3xl font-bold my-6">{children}</h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="text-2xl font-bold my-5">{children}</h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="text-xl font-bold my-4">{children}</h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-lg font-bold my-3">{children}</h4>
+    ),
     normal: ({ children }) => <p className="text-lg my-4">{children}</p>,
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-caput-mortuum pl-4 italic my-6">
@@ -70,17 +80,20 @@ const portableTextComponents = {
 
 export default async function BlogPost({ params }) {
   const post = await getPostBySlug(params.slug);
-  
+
   if (!post) {
     notFound();
   }
-  
+
   return (
     <div className="pt-24 bg-linen min-h-screen">
       {/* Blog Post Header */}
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-6">
-          <Link href="/blog" className="inline-flex items-center text-white hover:text-gray-300 mb-6">
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-white hover:text-gray-300 mb-6"
+          >
             <FaArrowLeft className="mr-2" /> Back to all articles
           </Link>
           <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
@@ -126,7 +139,10 @@ export default async function BlogPost({ params }) {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
             <div className="prose prose-lg">
-              <PortableText value={post.body} components={portableTextComponents} />
+              <PortableText
+                value={post.body}
+                components={portableTextComponents}
+              />
             </div>
           </div>
         </div>
@@ -149,7 +165,9 @@ export default async function BlogPost({ params }) {
                   </div>
                 )}
                 <div>
-                  <h3 className="text-xl font-bold">About {post.author.name}</h3>
+                  <h3 className="text-xl font-bold">
+                    About {post.author.name}
+                  </h3>
                   {post.author.bio && (
                     <div className="text-gray-700 mt-2">
                       <PortableText value={post.author.bio} />
@@ -165,9 +183,14 @@ export default async function BlogPost({ params }) {
       {/* Related Posts - Placeholder for now */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-10 text-center">You Might Also Like</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center">
+            You Might Also Like
+          </h2>
           <div className="text-center">
-            <Link href="/blog" className="btn bg-caput-mortuum hover:bg-opacity-90 text-white inline-block">
+            <Link
+              href="/blog"
+              className="btn bg-caput-mortuum hover:bg-opacity-90 text-white inline-block"
+            >
               View All Articles
             </Link>
           </div>
