@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from "react-icons/fa";
-import { getPostBySlug, urlFor } from "@/lib/sanity";
+import { getPostBySlug, urlFor, client } from "@/lib/sanity"; // Import client here
 import { PortableText } from "@portabletext/react";
 
 export async function generateMetadata({ params }) {

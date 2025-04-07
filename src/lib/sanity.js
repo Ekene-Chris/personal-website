@@ -1,6 +1,6 @@
 // src/lib/sanity.js
 import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor as sanityUrlFor } from "@/sanity/lib/image";
 
 // Function to fetch all blog posts
 export async function getAllPosts() {
@@ -48,3 +48,9 @@ export async function getPostBySlug(slug) {
     return null;
   }
 }
+
+// Re-export the urlFor function
+export const urlFor = sanityUrlFor;
+
+// Also export the client for use in other places
+export { client };
