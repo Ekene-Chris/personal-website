@@ -91,62 +91,7 @@ export default function Home() {
       </section>
 
       {/* Program Details Section */}
-      <section id="program-details" className="py-16 sm:py-20 bg-black text-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-12">
-            Teleios Program Details
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Who Should Apply</h3>
-              <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base">
-                <li className="flex items-start">
-                  <span className="text-caput-mortuum mr-2">•</span>
-                  <span>
-                    <strong>Mid-level DevOps, Backend, or Frontend engineers</strong> ready to step into senior or leadership roles
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-caput-mortuum mr-2">•</span>
-                  <span>
-                    <strong>Self-taught developers</strong> eager to validate their skills in a rigorous, real-world environment
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-caput-mortuum mr-2">•</span>
-                  <span>
-                    <strong>Driven recent graduates</strong> who refuse to settle for average and are determined to stand out globally
-                  </span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Program Investment</h3>
-              <div className="bg-caput-mortuum bg-opacity-30 p-4 sm:p-6 rounded-lg mb-4 sm:mb-6 text-sm sm:text-base">
-                <p className="mb-2"><strong>One-Time Payment:</strong> $1,000 for the entire 4-month experience</p>
-                <p className="mb-2"><strong>Flexible Monthly Plan:</strong> $300/month over 4 months</p>
-                <p><strong>Early Bird Bonus:</strong> Free 1:1 career strategy session (valued at $250)</p>
-              </div>
-              <p className="text-sm sm:text-base">
-                <strong>Limited to 50 participants only</strong><br />
-                Deadline to Apply: June 21, 2025
-              </p>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12 sm:mt-16">
-            <Link 
-              href="https://jointeleios.com" 
-              target="_blank"
-              className="btn btn-primary text-base sm:text-xl py-3 px-6 sm:py-4 sm:px-8"
-            >
-              Secure Your Spot Now
-            </Link>
-          </div>
-        </div>
-      </section>
+  
 
 
 <section id="program-details" className="py-20 bg-black text-white">
