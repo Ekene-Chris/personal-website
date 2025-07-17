@@ -58,7 +58,7 @@ export default function Teleios() {
                 target="_blank"
                 className="btn btn-primary py-3 px-4 sm:py-3 sm:px-6 text-sm sm:text-base"
               >
-                Apply Now (Deadline: June 21)
+                Join Waitlist for Q4 Cohort
               </Link>
               <Link
                 href="#program-details"
@@ -113,26 +113,31 @@ export default function Teleios() {
 
             <div>
               <h3 className="text-2xl font-bold mb-6">Program Investment</h3>
-              <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg mb-6">
-                <p className="mb-2"><strong>One-Time Payment:</strong> $1,000 for the entire 4-month experience</p>
-                <p className="mb-2"><strong>Flexible Monthly Plan:</strong> $300/month over 4 months</p>
-                <p><strong>Early Bird Bonus:</strong> Free 1:1 career strategy session (valued at $250)</p>
-              </div>
-              <p className="text-lg">
-                <strong>Limited to 50 participants only</strong><br />
-                Deadline to Apply: June 21, 2025
-              </p>
+                <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg mb-6">
+                  <p className="mb-2">
+                    <strong>One-Time Payment:</strong>
+                    <span className="line-through ml-1">$1,000</span>
+                    <span className="ml-2 text-green-400 font-semibold">$500</span>
+                    for the entire 4-month experience
+                  </p>
+                  <p className="mb-2"><strong>Flexible Monthly Plan:</strong> $300/month over 4 months</p>
+                  <p><strong>Early Bird Bonus:</strong> Free 1:1 career strategy session (valued at $250)</p>
+                </div>
+                <p className="text-lg">
+                  <strong>Limited to 50 participants only</strong><br />
+                  Cohort already started – next cohort begins Q4 2025
+                </p>
             </div>
           </div>
 
           <div className="text-center mt-16">
-            <Link
-              href="https://jointeleios.com"
-              target="_blank"
-              className="btn btn-primary text-xl py-4 px-8"
-            >
-              Secure Your Spot Now
-            </Link>
+              <Link
+                href="https://jointeleios.com"
+                target="_blank"
+                className="btn btn-primary text-xl py-4 px-8"
+              >
+                Join the Q4 Waitlist
+              </Link>
           </div>
         </div>
       </section>
