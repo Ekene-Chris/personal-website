@@ -74,6 +74,12 @@ export const Header = () => {
             Resources
           </Link>
           <Link
+            href="/teleios"
+            className="hover:text-caput-mortuum transition duration-200 py-2"
+          >
+            Teleios
+          </Link>
+          <Link
             href="/contact"
             className="hover:text-caput-mortuum transition duration-200 py-2"
           >
@@ -134,6 +140,13 @@ export const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Resources
+            </Link>
+            <Link
+              href="/teleios"
+              className="block py-2 text-black hover:text-caput-mortuum transition duration-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Teleios
             </Link>
             <Link
               href="/contact"
