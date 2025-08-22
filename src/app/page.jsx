@@ -206,7 +206,7 @@ export default function Home() {
                   with Kubernetes...
                 </p>
                 <Link
-                  href="/blog"
+                  href="/blog/architecting-multi-region-kubernetes-deployments-beyond-basic-replication"
                   className="text-caput-mortuum font-medium flex items-center"
                 >
                   Read on the Blog
@@ -235,7 +235,7 @@ export default function Home() {
                   teams...
                 </p>
                 <Link
-                  href="/blog"
+                  href="/blog/communication-patterns-that-global-teams-expect"
                   className="text-caput-mortuum font-medium flex items-center"
                 >
                   Read on the Blog
@@ -264,7 +264,7 @@ export default function Home() {
                   from senior engineers...
                 </p>
                 <Link
-                  href="/blog"
+                  href="/blog/system-design-skills-that-show-you-re-senior-ready"
                   className="text-caput-mortuum font-medium flex items-center"
                 >
                   Read on the Blog
