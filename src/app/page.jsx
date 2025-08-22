@@ -205,9 +205,12 @@ export default function Home() {
                   A deep dive into scaling applications across multiple regions
                   with Kubernetes...
                 </p>
-                <button className="text-caput-mortuum font-medium flex items-center">
-                  Coming Soon
-                </button>
+                <Link
+                  href="/blog"
+                  className="text-caput-mortuum font-medium flex items-center"
+                >
+                  Read on the Blog
+                </Link>
               </div>
             </div>
 
@@ -231,9 +234,12 @@ export default function Home() {
                   How to align your communication style with global engineering
                   teams...
                 </p>
-                <button className="text-caput-mortuum font-medium flex items-center">
-                  Coming Soon
-                </button>
+                <Link
+                  href="/blog"
+                  className="text-caput-mortuum font-medium flex items-center"
+                >
+                  Read on the Blog
+                </Link>
               </div>
             </div>
 
@@ -257,9 +263,12 @@ export default function Home() {
                   Key architectural thinking patterns that separate mid-level
                   from senior engineers...
                 </p>
-                <button className="text-caput-mortuum font-medium flex items-center">
-                  Coming Soon
-                </button>
+                <Link
+                  href="/blog"
+                  className="text-caput-mortuum font-medium flex items-center"
+                >
+                  Read on the Blog
+                </Link>
               </div>
             </div>
           </div>
@@ -285,9 +294,12 @@ export default function Home() {
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaServer />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
-                Coming Soon
-              </button>
+              <Link
+                href="/blog"
+                className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10"
+              >
+                Read on the Blog
+              </Link>
             </div>
 
             <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
@@ -301,9 +313,12 @@ export default function Home() {
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaEarthAfrica />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
-                Coming Soon
-              </button>
+              <Link
+                href="/blog"
+                className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10"
+              >
+                Read on the Blog
+              </Link>
             </div>
 
             <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
@@ -317,9 +332,12 @@ export default function Home() {
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaArrowUpRightDots />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
-                Coming Soon
-              </button>
+              <Link
+                href="/blog"
+                className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10"
+              >
+                Read on the Blog
+              </Link>
             </div>
 
             <div className="bg-caput-mortuum bg-opacity-30 p-6 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2 border border-gray-800 relative overflow-hidden">
@@ -332,9 +350,12 @@ export default function Home() {
               <div className="absolute bottom-[-20px] right-[-20px] text-caput-mortuum opacity-10 text-8xl">
                 <FaUsers />
               </div>
-              <button className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10">
-                Coming Soon
-              </button>
+              <Link
+                href="/blog"
+                className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10"
+              >
+                Read on the Blog
+              </Link>
             </div>
           </div>
         </div>
