@@ -354,7 +354,7 @@ export default function Home() {
                 href="/blog"
                 className="inline-block border border-white py-2 px-4 rounded hover:bg-white hover:text-black transition duration-300 relative z-10"
               >
-                Read on the Blog
+                Coming Soon
               </Link>
             </div>
           </div>
