@@ -130,12 +130,6 @@ export default function Home() {
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 </div>
-
-                {/* Floating badge */}
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-caput-mortuum to-kombu-green text-white px-6 py-4 rounded-xl shadow-xl backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold">10+</div>
-                  <div className="text-sm">Years Experience</div>
-                </div>
               </div>
             </div>
           </div>
@@ -174,7 +168,7 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-kombu-green/10 to-transparent rounded-tr-full"></div>
 
               <p className="text-xl md:text-2xl leading-relaxed text-gray-700 relative z-10">
-                I position myself as a{" "}
+                I am a{" "}
                 <span className="font-bold text-caput-mortuum">DevOps Architect</span> who
                 empowers African engineers to compete globally through technical excellence
                 and strategic upskilling. Through my expertise in cloud architecture,

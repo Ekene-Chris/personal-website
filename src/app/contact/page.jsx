@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub, FaArrowRight, FaPaperPlane } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,28 +27,21 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Extract the form ID from your Google Form URL
-      // The URL format is: https://docs.google.com/forms/d/e/[FORM_ID]/viewform
-      // Example: 1FAIpQLSemPxrlB9PvisiofQFbboDvUN7l6_pb8qeWY4ZLNk7sPyMg4A
       const formId = "1FAIpQLSemPxrlB9PvisiofQFbboDvUN7l6_pb8qeWY4ZLNk7sPyMg4A";
 
-      // These must match your Google Form's entry IDs exactly
-      // You'll need to inspect your Google Form to get these
       const entryIds = {
-        name: "entry.1664869934", // Replace with your actual entry ID
-        email: "entry.1700356717", // Replace with your actual entry ID
-        subject: "entry.235121228", // Replace with your actual entry ID
-        message: "entry.1421278832", // Replace with your actual entry ID
+        name: "entry.1664869934",
+        email: "entry.1700356717",
+        subject: "entry.235121228",
+        message: "entry.1421278832",
       };
 
-      // Create a hidden form element to submit
       const form = document.createElement("form");
       form.action = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
       form.method = "POST";
-      form.target = "_blank"; // This opens the response in a new tab
+      form.target = "_blank";
       form.style.display = "none";
 
-      // Add form fields with the correct entry IDs
       Object.entries(entryIds).forEach(([key, entryId]) => {
         const input = document.createElement("input");
         input.type = "text";
@@ -57,12 +50,10 @@ export default function Contact() {
         form.appendChild(input);
       });
 
-      // Append to document, submit, and then remove
       document.body.appendChild(form);
       form.submit();
       document.body.removeChild(form);
 
-      // Reset the form
       setFormData({
         name: "",
         email: "",
@@ -87,12 +78,22 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-24 bg-linen min-h-screen">
-      {/* Contact Header */}
-      <section className="py-16 bg-black text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl font-bold mb-6">Get In Touch</h1>
-          <p className="max-w-2xl mx-auto text-lg">
+    <div className="pt-20 bg-linen min-h-screen">
+      {/* Contact Header - Redesigned */}
+      <section className="relative py-24 bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-caput-mortuum/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-kombu-green/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <span className="text-gold font-semibold text-sm uppercase tracking-wider">Contact</span>
+          <h1 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
+            Get In{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-caput-mortuum to-gold">
+              Touch
+            </span>
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-caput-mortuum to-gold mx-auto rounded-full mb-8"></div>
+          <p className="max-w-2xl mx-auto text-xl text-gray-300 leading-relaxed">
             I'm always interested in connecting with fellow technology
             enthusiasts, potential clients, or anyone looking to advance their
             career in tech.
@@ -100,204 +101,231 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Content */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-12">
+      {/* Contact Content - Redesigned */}
+      <section className="py-24 bg-gradient-to-br from-linen to-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-caput-mortuum/5 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12">
             {/* Contact Info */}
-            <div className="md:w-1/3">
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+            <div className="lg:w-1/3">
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
 
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-bold mb-3">Let's Connect</h3>
-                  <p className="text-gray-700 mb-4">
-                    Reach out to me directly through email or connect with me on
-                    social media platforms.
-                  </p>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-bold mb-4">Let's Connect</h3>
+                    <p className="text-gray-700 mb-6">
+                      Reach out to me directly through email or connect with me on
+                      social media platforms.
+                    </p>
 
-                  <ul className="space-y-4">
-                    <li className="flex items-center">
-                      <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
-                        <FaEnvelope />
-                      </div>
-                      <a
-                        href="mailto:ekenechris77@gmail.com"
-                        className="text-caput-mortuum hover:underline"
-                      >
-                        ekenechris77@gmail.com
-                      </a>
-                    </li>
+                    <ul className="space-y-4">
+                      <li className="group flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div className="w-12 h-12 bg-gradient-to-br from-caput-mortuum to-caput-mortuum/80 text-white rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                          <FaEnvelope size={18} />
+                        </div>
+                        <a
+                          href="mailto:ekenechris77@gmail.com"
+                          className="text-caput-mortuum hover:underline font-medium"
+                        >
+                          ekenechris77@gmail.com
+                        </a>
+                      </li>
 
-                    <li className="flex items-center">
-                      <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
-                        <FaLinkedin />
-                      </div>
-                      <a
-                        href="https://www.linkedin.com/in/ekene-chris"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-caput-mortuum hover:underline"
-                      >
-                        linkedin.com/in/ekene-chris
-                      </a>
-                    </li>
+                      <li className="group flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div className="w-12 h-12 bg-gradient-to-br from-caput-mortuum to-caput-mortuum/80 text-white rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                          <FaLinkedin size={18} />
+                        </div>
+                        <a
+                          href="https://www.linkedin.com/in/ekene-chris"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-caput-mortuum hover:underline font-medium"
+                        >
+                          linkedin.com/in/ekene-chris
+                        </a>
+                      </li>
 
-                    <li className="flex items-center">
-                      <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
-                        <FaTwitter />
-                      </div>
-                      <a
-                        href="https://x.com/iamekenechris"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-caput-mortuum hover:underline"
-                      >
-                        x.com/iamekenechris
-                      </a>
-                    </li>
+                      <li className="group flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div className="w-12 h-12 bg-gradient-to-br from-caput-mortuum to-caput-mortuum/80 text-white rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                          <FaTwitter size={18} />
+                        </div>
+                        <a
+                          href="https://x.com/iamekenechris"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-caput-mortuum hover:underline font-medium"
+                        >
+                          x.com/iamekenechris
+                        </a>
+                      </li>
 
-                    <li className="flex items-center">
-                      <div className="w-10 h-10 bg-caput-mortuum text-white rounded-full flex items-center justify-center mr-4">
-                        <FaGithub />
-                      </div>
-                      <a
-                        href="https://github.com/Ekene-Chris"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-caput-mortuum hover:underline"
-                      >
-                        github.com/Ekene-Chris
-                      </a>
-                    </li>
-                  </ul>
+                      <li className="group flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div className="w-12 h-12 bg-gradient-to-br from-caput-mortuum to-caput-mortuum/80 text-white rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                          <FaGithub size={18} />
+                        </div>
+                        <a
+                          href="https://github.com/Ekene-Chris"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-caput-mortuum hover:underline font-medium"
+                        >
+                          github.com/Ekene-Chris
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="md:w-2/3">
-              <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
+            <div className="lg:w-2/3">
+              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
+                <h2 className="text-3xl font-bold mb-6">Send Me a Message</h2>
 
-              {submitStatus && (
-                <div
-                  className={`p-4 mb-6 rounded-lg ${
-                    submitStatus.success
-                      ? "bg-green-100 text-green-700"
-                      : "bg-red-100 text-red-700"
-                  }`}
-                >
-                  {submitStatus.message}
-                </div>
-              )}
-
-              <form
-                onSubmit={handleSubmit}
-                className="bg-white p-8 rounded-lg shadow-md"
-              >
-                <div className="mb-6">
-                  <label
-                    htmlFor="name"
-                    className="block text-gray-700 font-medium mb-2"
+                {submitStatus && (
+                  <div
+                    className={`p-4 mb-6 rounded-lg ${
+                      submitStatus.success
+                        ? "bg-green-100 text-green-700 border border-green-300"
+                        : "bg-red-100 text-red-700 border border-red-300"
+                    }`}
                   >
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition"
-                  />
-                </div>
+                    {submitStatus.message}
+                  </div>
+                )}
 
-                <div className="mb-6">
-                  <label
-                    htmlFor="email"
-                    className="block text-gray-700 font-medium mb-2"
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-gray-700 font-semibold mb-2"
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition-all"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-gray-700 font-semibold mb-2"
+                    >
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition-all"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="subject"
+                      className="block text-gray-700 font-semibold mb-2"
+                    >
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition-all"
+                      placeholder="How can I help you?"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-gray-700 font-semibold mb-2"
+                    >
+                      Your Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows="6"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition-all resize-none"
+                      placeholder="Tell me about your project or question..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`group w-full px-8 py-4 bg-gradient-to-r from-caput-mortuum to-caput-mortuum/80 hover:from-caput-mortuum/90 hover:to-caput-mortuum text-white rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-caput-mortuum/50 flex items-center justify-center gap-2 ${
+                      isSubmitting
+                        ? "opacity-70 cursor-not-allowed"
+                        : ""
+                    }`}
                   >
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition"
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label
-                    htmlFor="subject"
-                    className="block text-gray-700 font-medium mb-2"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition"
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label
-                    htmlFor="message"
-                    className="block text-gray-700 font-medium mb-2"
-                  >
-                    Your Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-caput-mortuum focus:border-caput-mortuum transition"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`px-6 py-3 bg-black text-white rounded-lg font-medium ${
-                    isSubmitting
-                      ? "opacity-70 cursor-not-allowed"
-                      : "hover:bg-opacity-90"
-                  }`}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-              </form>
+                    {isSubmitting ? (
+                      <>
+                        <span className="animate-spin">⏳</span>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <FaPaperPlane className="group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-10 text-center">
-            Frequently Asked Questions
-          </h2>
+      {/* FAQ Section - Redesigned */}
+      <section className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-kombu-green/5 rounded-full blur-3xl"></div>
 
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-bold mb-3">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-caput-mortuum font-semibold text-sm uppercase tracking-wider">FAQ</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
+              Frequently Asked{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-caput-mortuum to-kombu-green">
+                Questions
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-caput-mortuum to-gold mx-auto rounded-full"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* FAQ 1 */}
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <h3 className="text-xl font-bold mb-3 text-caput-mortuum">
                   What services do you offer?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 leading-relaxed">
                   I provide technical consulting, architectural guidance for
                   DevOps and cloud infrastructure, career mentorship for
                   engineers, and technical leadership training. Each service is
@@ -306,11 +334,12 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold mb-3">
+              {/* FAQ 2 */}
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <h3 className="text-xl font-bold mb-3 text-caput-mortuum">
                   How does your mentorship program work?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 leading-relaxed">
                   My mentorship program is typically a 3-6 month engagement with
                   regular 1:1 sessions, personalized learning paths, and
                   practical projects aligned with your career goals. I work with
@@ -319,11 +348,12 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold mb-3">
+              {/* FAQ 3 */}
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <h3 className="text-xl font-bold mb-3 text-caput-mortuum">
                   Do you offer speaking engagements or workshops?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 leading-relaxed">
                   Yes, I regularly speak at conferences and conduct workshops on
                   DevOps practices, cloud architecture, and engineering career
                   development. Please contact me with details about your event,
@@ -331,11 +361,12 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold mb-3">
+              {/* FAQ 4 */}
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <h3 className="text-xl font-bold mb-3 text-caput-mortuum">
                   How quickly can I expect a response?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 leading-relaxed">
                   I typically respond to all inquiries within 1-2 business days.
                   For urgent matters, please mention that in your subject line,
                   and I'll do my best to prioritize your request.
