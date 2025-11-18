@@ -105,32 +105,51 @@ export default function About() {
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
-                  As the Co-Founder & CEO of Teleios, I am shaping AI-powered
-                  learning for aspiring and mid-level engineers across all
-                  disciplines. My focus is on bridging the gap between African
-                  tech talent and global opportunities through practical,
-                  results-oriented training and mentorship.
+                  I'm a Senior DevOps Engineer, educator, and founder — passionate about building both reliable systems and reliable engineers.
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
-                  With a track record spanning Andela, Kuda, and Tek Experts, I
-                  specialize in architecture design, system optimization, and
-                  software engineering best practices. My experience leading
-                  complex cloud infrastructure projects has given me unique
-                  insights into what it takes for engineers from emerging tech
-                  ecosystems to excel in global companies.
+                  I started my journey in Physics, where I graduated top of my class. I loved solving complex problems, but even more — I loved explaining them. That passion followed me into tech.
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
-                  I'm passionate about mentorship and strategic problem-solving,
-                  committed to building resilient, scalable tech solutions that
-                  drive efficiency and transformation. My approach combines deep
-                  technical expertise with a keen understanding of the human
-                  elements needed for successful engineering teams.
+                  Today, I design and scale cloud-native systems for global companies, architecting automation, infrastructure, and platform reliability. I specialize in DevOps, Platform Engineering, and Cloud Engineering, ensuring systems are not just running — but resilient, observable, secure, and scalable.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <p>
+                  Even while building systems, I found myself building people. I started Teleios — not just as another tech training program, but as an elite engineering academy focused on practical DevOps mastery, engineering discipline, and world-class readiness.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <p>
+                  I believe that the future of Africa's tech transformation relies on both infrastructure and intellectual infrastructure. We need world-class cloud platforms — but we also need world-class engineers.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <p>
+                  I'm also involved in open source, contributing to CNCF-related projects and cloud-native tooling, focusing on improving reliability and automation in distributed systems. I actively collaborate with global engineering communities, write documentation, review PRs, and build small features that improve developer experience.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <p>
+                  In the long term, I'm building an AI-powered collaborative learning platform that blends peer learning, mentorship, and community — because the future of education won't just be intelligent, it will be deeply human, interactive, and immersive.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <p className="font-semibold">
+                  I architect systems.<br />
+                  I mentor engineers.<br />
+                  And I'm designing the future of learning and cloud engineering.
                 </p>
               </div>
             </div>
@@ -231,6 +250,31 @@ export default function About() {
                   </p>
                 </div>
               </div>
+
+              {/* Experience Item 4 */}
+              <div className="group relative">
+                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-caput-mortuum to-gold rounded-full"></div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ml-8 relative">
+                  <div className="absolute -left-12 top-8 w-8 h-8 bg-gradient-to-br from-caput-mortuum to-gold rounded-full flex items-center justify-center">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-caput-mortuum to-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                      <FaCloud className="text-2xl text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-1">DevOps Engineer</h3>
+                      <h4 className="text-lg text-caput-mortuum mb-2 font-semibold">Reddington Healthcare</h4>
+                      <p className="text-gray-500 text-sm mb-4">2019 - 2021</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    Designed and implemented cloud infrastructure and automation solutions
+                    for healthcare systems. Built CI/CD pipelines and monitoring systems
+                    to ensure high availability and reliability of critical healthcare applications.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -273,15 +317,11 @@ export default function About() {
                   </li>
                   <li className="flex items-center group/item">
                     <span className="text-caput-mortuum mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">Google Cloud Platform</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">Infrastructure as Code (Terraform, Ansible, CloudFormation)</span>
                   </li>
                   <li className="flex items-center group/item">
                     <span className="text-caput-mortuum mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">Infrastructure as Code (Terraform, CloudFormation)</span>
-                  </li>
-                  <li className="flex items-center group/item">
-                    <span className="text-caput-mortuum mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">Containerization (Docker, Kubernetes)</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">Containerization (Docker, Kubernetes, Helm)</span>
                   </li>
                 </ul>
               </div>
@@ -297,15 +337,11 @@ export default function About() {
                 <ul className="space-y-3">
                   <li className="flex items-center group/item">
                     <span className="text-gold mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">CI/CD (Jenkins, GitHub Actions, CircleCI)</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">CI/CD (GitHub Actions, ArgoCD, Azure DevOps)</span>
                   </li>
                   <li className="flex items-center group/item">
                     <span className="text-gold mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">Configuration Management (Ansible, Chef)</span>
-                  </li>
-                  <li className="flex items-center group/item">
-                    <span className="text-gold mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">Monitoring & Observability (Prometheus, Grafana, ELK)</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">Monitoring & Observability (Prometheus, Grafana, ELK, Datadog, New Relic)</span>
                   </li>
                   <li className="flex items-center group/item">
                     <span className="text-gold mr-3">▸</span>
@@ -314,6 +350,10 @@ export default function About() {
                   <li className="flex items-center group/item">
                     <span className="text-gold mr-3">▸</span>
                     <span className="group-hover/item:text-caput-mortuum transition-colors">Security Automation</span>
+                  </li>
+                  <li className="flex items-center group/item">
+                    <span className="text-gold mr-3">▸</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">High Availability & Scalability</span>
                   </li>
                 </ul>
               </div>
@@ -333,10 +373,6 @@ export default function About() {
                   </li>
                   <li className="flex items-center group/item">
                     <span className="text-kombu-green mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">JavaScript/TypeScript</span>
-                  </li>
-                  <li className="flex items-center group/item">
-                    <span className="text-kombu-green mr-3">▸</span>
                     <span className="group-hover/item:text-caput-mortuum transition-colors">Go</span>
                   </li>
                   <li className="flex items-center group/item">
@@ -346,6 +382,10 @@ export default function About() {
                   <li className="flex items-center group/item">
                     <span className="text-kombu-green mr-3">▸</span>
                     <span className="group-hover/item:text-caput-mortuum transition-colors">API Design</span>
+                  </li>
+                  <li className="flex items-center group/item">
+                    <span className="text-kombu-green mr-3">▸</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">Cloud-Native Development</span>
                   </li>
                 </ul>
               </div>
