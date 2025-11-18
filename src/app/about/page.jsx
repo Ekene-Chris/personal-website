@@ -102,50 +102,40 @@ export default function About() {
               <div className="w-24 h-1 bg-gradient-to-r from-caput-mortuum to-gold mx-auto rounded-full"></div>
             </div>
 
-            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 relative overflow-hidden">
+              {/* Decorative corner */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-caput-mortuum/10 to-transparent rounded-bl-full"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-kombu-green/10 to-transparent rounded-tr-full"></div>
+
+              <div className="space-y-6 text-lg leading-relaxed text-gray-700 relative z-10">
                 <p>
                   I'm a Senior DevOps Engineer, educator, and founder — passionate about building both reliable systems and reliable engineers.
                 </p>
-              </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
                   I started my journey in Physics, where I graduated top of my class. I loved solving complex problems, but even more — I loved explaining them. That passion followed me into tech.
                 </p>
-              </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
                   Today, I design and scale cloud-native systems for global companies, architecting automation, infrastructure, and platform reliability. I specialize in DevOps, Platform Engineering, and Cloud Engineering, ensuring systems are not just running — but resilient, observable, secure, and scalable.
                 </p>
-              </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
                   Even while building systems, I found myself building people. I started Teleios — not just as another tech training program, but as an elite engineering academy focused on practical DevOps mastery, engineering discipline, and world-class readiness.
                 </p>
-              </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
                   I believe that the future of Africa's tech transformation relies on both infrastructure and intellectual infrastructure. We need world-class cloud platforms — but we also need world-class engineers.
                 </p>
-              </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
                   I'm also involved in open source, contributing to CNCF-related projects and cloud-native tooling, focusing on improving reliability and automation in distributed systems. I actively collaborate with global engineering communities, write documentation, review PRs, and build small features that improve developer experience.
                 </p>
-              </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p>
                   In the long term, I'm building an AI-powered collaborative learning platform that blends peer learning, mentorship, and community — because the future of education won't just be intelligent, it will be deeply human, interactive, and immersive.
                 </p>
-              </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <p className="font-semibold">
                   I architect systems.<br />
                   I mentor engineers.<br />
@@ -309,11 +299,11 @@ export default function About() {
                 <ul className="space-y-3">
                   <li className="flex items-center group/item">
                     <span className="text-caput-mortuum mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">AWS (Advanced)</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">AWS</span>
                   </li>
                   <li className="flex items-center group/item">
                     <span className="text-caput-mortuum mr-3">▸</span>
-                    <span className="group-hover/item:text-caput-mortuum transition-colors">Microsoft Azure</span>
+                    <span className="group-hover/item:text-caput-mortuum transition-colors">Microsoft Azure (Advanced)</span>
                   </li>
                   <li className="flex items-center group/item">
                     <span className="text-caput-mortuum mr-3">▸</span>
