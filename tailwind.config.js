@@ -25,6 +25,8 @@ module.exports = {
         bounce: "bounce 1s infinite",
         pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         cardHover: "cardHover 0.3s ease-out forwards",
+        "spin-slow": "spin 20s linear infinite",
+        "spin-slow-reverse": "spin 30s linear infinite reverse",
       },
       keyframes: {
         fadeIn: {
