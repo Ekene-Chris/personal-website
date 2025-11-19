@@ -81,9 +81,8 @@ const StatusCard = () => {
 export default function BentoHero() {
   return (
     <section className="min-h-screen bg-deep-charcoal relative overflow-hidden pt-20">
-      {/* Background with grid pattern and noise */}
+      {/* Background with grid pattern */}
       <div className="absolute inset-0 bg-grid-pattern bg-grid-size opacity-20"></div>
-      <div className="absolute inset-0 bg-noise opacity-[0.02]"></div>
 
       <div className="container mx-auto px-6 py-12 relative z-10">
         {/* Bento Grid Layout */}
