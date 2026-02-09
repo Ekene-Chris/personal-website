@@ -82,12 +82,23 @@ export default async function Blog() {
                       <span>{post.estimatedReadingTime || 5} min read</span>
                     </div>
                     <div className="mt-4">
-                      <Link
-                        href={`/blog/${post.slug.current}`}
-                        className="text-caput-mortuum hover:underline"
-                      >
-                        Read article →
-                      </Link>
+                      {(() => {
+                        const postSlug = post?.slug?.current ??
+                          (typeof post?.slug === 'string' ? post.slug : null);
+                        if (!postSlug) {
+                          return (
+                            <span className="text-gray-400">Draft (no slug)</span>
+                          );
+                        }
+                        return (
+                          <Link
+                            href={`/blog/${postSlug}`}
+                            className="text-caput-mortuum hover:underline"
+                          >
+                            Read article →
+                          </Link>
+                        );
+                      })()}
                     </div>
                   </div>
                 </div>

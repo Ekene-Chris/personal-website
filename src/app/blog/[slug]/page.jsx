@@ -1,10 +1,12 @@
-// src/app/blog/[slug]/page.jsx
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from "react-icons/fa";
 import { getPostBySlug, urlFor, client } from "@/lib/sanity"; // Import client here
 import { PortableText } from "@portabletext/react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export async function generateMetadata({ params }) {
   const post = await getPostBySlug(params.slug);
@@ -35,6 +37,24 @@ const portableTextComponents = {
             fill
             className="object-contain"
           />
+        </div>
+      );
+    },
+    code: ({ value }) => {
+      return (
+        <div className="my-8">
+          {value.filename && (
+            <div className="bg-gray-800 text-gray-300 text-xs px-4 py-2 rounded-t-md font-mono border-b border-gray-700">
+              {value.filename}
+            </div>
+          )}
+          <SyntaxHighlighter
+            language={value.language || 'text'}
+            style={vscDarkPlus}
+            className={value.filename ? 'rounded-b-md !mt-0' : 'rounded-md'}
+          >
+            {value.code}
+          </SyntaxHighlighter>
         </div>
       );
     },
