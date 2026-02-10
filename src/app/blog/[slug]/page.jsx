@@ -5,8 +5,11 @@ import { notFound } from "next/navigation";
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from "react-icons/fa";
 import { getPostBySlug, urlFor, client } from "@/lib/sanity"; // Import client here
 import { PortableText } from "@portabletext/react";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import hcl from 'react-syntax-highlighter/dist/esm/languages/prism/hcl';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+SyntaxHighlighter.registerLanguage('hcl', hcl);
 
 export async function generateMetadata({ params }) {
   const post = await getPostBySlug(params.slug);

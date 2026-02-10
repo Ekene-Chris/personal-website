@@ -76,6 +76,24 @@ export const blockContentType = defineType({
       type: 'code',
       options: {
         withFilename: true,
+        languageAlternatives: [
+          { title: 'JavaScript', value: 'javascript' },
+          { title: 'TypeScript', value: 'typescript' },
+          { title: 'HTML', value: 'html' },
+          { title: 'CSS', value: 'css' },
+          { title: 'HCL', value: 'hcl' },
+          { title: 'JSON', value: 'json' },
+          { title: 'YAML', value: 'yaml' },
+          { title: 'Bash', value: 'bash' },
+          { title: 'Python', value: 'python' },
+          { title: 'Java', value: 'java' },
+          { title: 'C#', value: 'csharp' },
+          { title: 'Go', value: 'go' },
+          { title: 'SQL', value: 'sql' },
+          { title: 'PHP', value: 'php' },
+          { title: 'Ruby', value: 'ruby' },
+          { title: 'Rust', value: 'rust' }
+        ]
       }
     }),
   ],
