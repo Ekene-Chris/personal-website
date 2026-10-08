@@ -17,6 +17,17 @@ body {
   line-height: 1.6;
 }
 
+/* Webinar pages load Montserrat via next/font (see app/webinar/layout.jsx) */
+.webinar {
+  font-family: "Avenir", var(--font-montserrat), sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.webinar) {
+    scroll-behavior: smooth;
+  }
+}
+
 .script-accent {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
