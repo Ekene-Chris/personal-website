@@ -12,7 +12,7 @@ import EventDetails, {
   eventTimeLabel,
 } from "@/components/webinar/EventDetails";
 import RegistrationForm from "@/components/webinar/RegistrationForm";
-import { host, webinar } from "@/lib/webinar/config";
+import { host, socialImage, webinar } from "@/lib/webinar/config";
 import { visibleStats, visibleTestimonials } from "@/lib/webinar/testimonials";
 
 const headline =
@@ -29,8 +29,14 @@ export const metadata = {
     url: "/webinar/",
     siteName: "Ekene Chris · Teleios",
     type: "website",
+    images: [socialImage],
   },
-  twitter: { card: "summary_large_image", title: headline, description },
+  twitter: {
+    card: "summary_large_image",
+    title: headline,
+    description,
+    images: [socialImage.url],
+  },
 };
 
 const painPoints = [

@@ -16,6 +16,14 @@ export const webinar = {
   beginnerProgramsUrl: null,
 };
 
+// Link preview image, rendered by app/webinar/og-image.png/route.jsx.
+export const socialImage = {
+  url: "/webinar/og-image.png",
+  width: 1200,
+  height: 630,
+  alt: "Stop Chasing Remote Jobs. Become the Engineer Global Teams Chase. A free live webinar with Ekene Chris.",
+};
+
 export const host = {
   name: "Ekene Chris",
   photo: "/images/webinar/host.jpg",
