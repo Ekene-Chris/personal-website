@@ -1,14 +1,14 @@
 import { ImageResponse } from "next/og";
-import { host, webinar } from "@/lib/webinar/config";
+import { host, socialImage, webinar } from "@/lib/webinar/config";
 import { formatEventTime } from "@/lib/webinar/time";
 
-// Link preview for LinkedIn and WhatsApp shares. Generated at build time.
-export const alt =
-  "Stop Chasing Remote Jobs. Become the Engineer Global Teams Chase. A free live webinar with Ekene Chris.";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+// Link preview for LinkedIn and WhatsApp shares, generated at build time.
+// Served from a ".png" path rather than the opengraph-image file convention:
+// with trailingSlash enabled, Next redirects the convention's extensionless
+// URL, and some link scrapers don't follow redirects for preview images.
+export const dynamic = "force-static";
 
-export default function OpengraphImage() {
+export function GET() {
   const { date, time } = formatEventTime(
     new Date(webinar.startsAt),
     webinar.hostTimeZone
@@ -74,6 +74,6 @@ export default function OpengraphImage() {
         </div>
       </div>
     ),
-    size
+    { width: socialImage.width, height: socialImage.height }
   );
 }
