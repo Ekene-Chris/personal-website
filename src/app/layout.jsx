@@ -1,5 +1,6 @@
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { montserrat } from "./fonts";
 
 export const metadata = {
   title: "Ekene Chris | DevOps Architect",
@@ -16,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={montserrat.variable}>
       <body className="flex flex-col min-h-screen">
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
