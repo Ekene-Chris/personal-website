@@ -1,17 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Montserrat } from "next/font/google";
 import { FaLinkedin } from "react-icons/fa6";
 import TrackingPixels from "@/components/webinar/TrackingPixels";
 import { host } from "@/lib/webinar/config";
-
-// Self-hosted at build time so Android and Windows visitors get the brand
-// font instead of a system fallback (Avenir is still preferred where present).
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-montserrat",
-});
 
 // Next only makes og:url and the canonical link absolute when metadataBase is
 // set explicitly; link scrapers expect absolute URLs there. Vercel provides
@@ -28,7 +19,7 @@ export const metadata = {
 export default function WebinarLayout({ children }) {
   return (
     <div
-      className={`webinar ${montserrat.variable} flex flex-grow flex-col bg-linen text-black`}
+      className="webinar flex flex-grow flex-col bg-linen text-black"
     >
       <header>
         <div className="container mx-auto px-6 py-5">
