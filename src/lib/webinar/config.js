@@ -6,7 +6,7 @@ export const webinar = {
   calendarTitle: "Teleios Live Session: Become the Engineer Global Teams Chase",
   // 6:00 PM WAT (UTC+1, no daylight saving) on Saturday 17 October 2026.
   startsAt: "2026-10-17T17:00:00Z",
-  durationMinutes: 90,
+  durationMinutes: 60,
   hostTimeZone: "Africa/Lagos",
   hostTimeZoneLabel: "WAT",
   platform: "Google Meet",
