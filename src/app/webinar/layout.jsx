@@ -13,6 +13,17 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+// Next only makes og:url and the canonical link absolute when metadataBase is
+// set explicitly; link scrapers expect absolute URLs there. Vercel provides
+// the production domain (www.ekenechris.com) at build time.
+export const metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"
+  ),
+};
+
 // Distraction-free chrome for the webinar funnel: no site navigation.
 export default function WebinarLayout({ children }) {
   return (
