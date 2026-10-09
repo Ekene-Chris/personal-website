@@ -10,6 +10,13 @@ export const webinar = {
   hostTimeZone: "Africa/Lagos",
   hostTimeZoneLabel: "WAT",
   platform: "Google Meet",
+  // Joining link, from the WEBINAR_MEET_URL env var. When set, it's shown on
+  // the thank-you page and added to the calendar invites; otherwise those
+  // point people to the confirmation email. Read at build time, so redeploy
+  // after changing it.
+  meetUrl: /^https:\/\/\S+$/.test(process.env.WEBINAR_MEET_URL ?? "")
+    ? process.env.WEBINAR_MEET_URL
+    : null,
 
   // Optional links. Leave as null to hide them.
   whatsappCommunityUrl: null,

@@ -3,6 +3,7 @@ import {
   FaGoogle,
   FaRegCalendarPlus,
   FaRegEnvelope,
+  FaVideo,
   FaWhatsapp,
 } from "react-icons/fa6";
 import EventDetails from "@/components/webinar/EventDetails";
@@ -37,6 +38,27 @@ export default function ThankYouPage() {
           <div className="mt-8 rounded-xl bg-linen px-6 py-5">
             <EventDetails align="center" />
           </div>
+
+          {webinar.meetUrl && (
+            <div className="mt-6 rounded-xl border-2 border-kombu-green px-6 py-5">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-kombu-green">
+                Your {webinar.platform} link
+              </h2>
+              <a
+                href={webinar.meetUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-2 break-all text-lg font-semibold text-caput-mortuum underline underline-offset-4"
+              >
+                <FaVideo aria-hidden="true" className="shrink-0" />
+                {webinar.meetUrl.replace(/^https:\/\//, "")}
+              </a>
+              <p className="mt-2 text-sm text-black/70">
+                Save it now. It’s also in the calendar invite below and in your
+                confirmation email.
+              </p>
+            </div>
+          )}
 
           <h2 className="mt-10 text-sm font-semibold uppercase tracking-[0.2em] text-caput-mortuum">
             Add it to your calendar

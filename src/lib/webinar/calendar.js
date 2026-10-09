@@ -2,10 +2,13 @@ import { host, webinar } from "./config";
 
 const description = [
   `Free live session with ${host.name} (Teleios).`,
-  `The ${webinar.platform} link is in your confirmation email. Can't find it? Check your spam folder.`,
+  webinar.meetUrl
+    ? `Join on ${webinar.platform}: ${webinar.meetUrl}`
+    : `The ${webinar.platform} link is in your confirmation email. Can't find it? Check your spam folder.`,
 ].join("\n\n");
 
-const location = `${webinar.platform} (link in your confirmation email)`;
+const location =
+  webinar.meetUrl ?? `${webinar.platform} (link in your confirmation email)`;
 
 function getEventWindow() {
   const start = new Date(webinar.startsAt);
@@ -55,6 +58,7 @@ export function buildIcs() {
     `SUMMARY:${escapeText(webinar.calendarTitle)}`,
     `DESCRIPTION:${escapeText(description)}`,
     `LOCATION:${escapeText(location)}`,
+    ...(webinar.meetUrl ? [`URL:${webinar.meetUrl}`] : []),
     "BEGIN:VALARM",
     "ACTION:DISPLAY",
     `DESCRIPTION:${escapeText(webinar.calendarTitle)}`,
