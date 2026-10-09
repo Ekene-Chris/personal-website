@@ -73,7 +73,9 @@ const notForYou = [
 
 const registerPerks = [
   "Free to attend",
-  `${webinar.platform} link sent to your inbox`,
+  webinar.meetUrl
+    ? `${webinar.platform} link as soon as you register`
+    : `${webinar.platform} link sent to your inbox`,
   "Recording sent to everyone who registers",
 ];
 
@@ -108,7 +110,9 @@ const faqs = [
   },
   {
     question: "What platform will it be on?",
-    answer: `${webinar.platform}. The link will be emailed to you after you register.`,
+    answer: webinar.meetUrl
+      ? `${webinar.platform}. You’ll get the link as soon as you register, and by email.`
+      : `${webinar.platform}. The link will be emailed to you after you register.`,
   },
 ];
 
