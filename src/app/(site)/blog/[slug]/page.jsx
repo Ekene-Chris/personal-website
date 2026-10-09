@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from "react-icons/fa";
-import { getPostBySlug, urlFor, client } from "@/lib/sanity"; // Import client here
+import { getAllPostSlugs, getPostBySlug, urlFor } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import hcl from 'react-syntax-highlighter/dist/esm/languages/prism/hcl';
@@ -236,14 +236,8 @@ export default async function BlogPost({ params }) {
 
 export async function generateStaticParams() {
   // Fetch all post slugs from your CMS
-  const posts = await client.fetch(`
-      *[_type == "post"] {
-        "slug": slug.current
-      }
-    `);
+  const slugs = await getAllPostSlugs();
 
   // Return an array of objects with the slug property
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return slugs.map((slug) => ({ slug }));
 }

@@ -7,12 +7,11 @@ export const metadata = {
     "Empowering African Engineers Through DevOps Excellence. Building the bridge between African talent and global opportunities through technical expertise and strategic upskilling.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({ children }) {

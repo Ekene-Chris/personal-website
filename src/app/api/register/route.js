@@ -1,54 +1,20 @@
 import { NextResponse } from "next/server";
+import { createBrevoContact as createContact } from "@/lib/brevo";
+import { createRateLimiter, getClientIp } from "@/lib/rate-limit";
 import { validateRegistration } from "@/lib/webinar/registration";
 
-const BREVO_CONTACTS_URL = "https://api.brevo.com/v3/contacts";
 const SOURCE = "webinar-landing-page";
 const MAX_BODY_BYTES = 10_000;
 const GENERIC_ERROR =
   "We couldn’t save your seat just now. Please try again in a moment.";
 
-// Basic per-IP rate limit. Serverless instances don’t share memory, so this
-// only blunts bursts against a single instance; add a Vercel Firewall rule if
-// the endpoint ever gets hammered. The limit is generous because many mobile
-// users in Nigeria share carrier IPs.
-const RATE_LIMIT = { windowMs: 60_000, max: 5 };
-const hits = new Map();
-
-function isRateLimited(ip) {
-  const now = Date.now();
-  const entry = hits.get(ip);
-  if (!entry || entry.resetAt <= now) {
-    if (hits.size >= 10_000) hits.clear();
-    hits.set(ip, { count: 1, resetAt: now + RATE_LIMIT.windowMs });
-    return false;
-  }
-  entry.count += 1;
-  return entry.count > RATE_LIMIT.max;
-}
+const isRateLimited = createRateLimiter({ windowMs: 60_000, max: 5 });
 
 const pickUtm = (value) =>
   typeof value === "string" ? value.trim().slice(0, 100) : "";
 
-function createContact(apiKey, payload) {
-  return fetch(BREVO_CONTACTS_URL, {
-    method: "POST",
-    headers: {
-      "api-key": apiKey,
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(payload),
-    cache: "no-store",
-    signal: AbortSignal.timeout(10_000),
-  });
-}
-
 export async function POST(request) {
-  const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
-    request.headers.get("x-real-ip") ||
-    "unknown";
-  if (isRateLimited(ip)) {
+  if (isRateLimited(getClientIp(request))) {
     return NextResponse.json(
       { error: "Too many attempts. Please wait a minute and try again." },
       { status: 429 }

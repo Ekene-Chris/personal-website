@@ -1,3 +1,4 @@
+import { isValidEmail, normalizeEmail } from "../email";
 import { COUNTRIES } from "./countries";
 
 // Shared by the registration form and /api/register so client and server
@@ -19,7 +20,6 @@ export const PRIMARY_AREAS = [
   { value: "Other", label: "Other" },
 ];
 
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const E164_PATTERN = /^\+[1-9]\d{7,14}$/;
 
 // Turns what the visitor typed (plus the selected country) into E.164, or
@@ -58,7 +58,7 @@ export function validateRegistration(input = {}) {
   const values = {
     firstName: clean(input.firstName),
     lastName: clean(input.lastName),
-    email: clean(input.email).toLowerCase(),
+    email: normalizeEmail(input.email),
     country: clean(input.country) || DEFAULT_COUNTRY,
     phone: clean(input.phone),
     role: clean(input.role),
@@ -79,7 +79,7 @@ export function validateRegistration(input = {}) {
     errors.lastName = "Last name must be 50 characters or fewer.";
 
   if (!values.email) errors.email = "Enter your email address.";
-  else if (values.email.length > 254 || !EMAIL_PATTERN.test(values.email))
+  else if (!isValidEmail(values.email))
     errors.email = "Enter a valid email address, like name@example.com.";
 
   if (!values.phone) errors.phone = "Enter your WhatsApp number.";

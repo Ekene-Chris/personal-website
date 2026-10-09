@@ -20,6 +20,7 @@ export function formatEventTime(date, timeZone) {
   return {
     weekday: parts.weekday,
     dayMonth: `${parts.day} ${parts.month}`,
+    year: parts.year,
     date: `${parts.weekday}, ${parts.day} ${parts.month} ${parts.year}`,
     time: `${parts.hour}:${parts.minute} ${parts.dayPeriod}`,
     zone: parts.timeZoneName,
