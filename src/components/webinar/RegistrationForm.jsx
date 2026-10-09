@@ -439,7 +439,7 @@ export default function RegistrationForm() {
         )}
       </button>
       <p className="text-center text-sm text-black/60">
-        Free to attend. We’ll email you the {webinar.platform} link.
+        We’ll email you the {webinar.platform} link.
       </p>
     </form>
   );

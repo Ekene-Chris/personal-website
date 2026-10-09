@@ -110,7 +110,7 @@ export default async function Home() {
                   className="group mb-6 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-caput-mortuum/20 bg-white/80 py-1.5 pl-1.5 pr-4 text-sm shadow-sm transition hover:border-caput-mortuum/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-caput-mortuum"
                 >
                   <span className="rounded-full bg-caput-mortuum px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                    Free webinar
+                    Live webinar
                   </span>
                   <span className="font-medium">
                     {webinarTime.weekday}, {webinarTime.dayMonth} ·{" "}
@@ -140,7 +140,7 @@ export default async function Home() {
                   href={webinarUpcoming ? "/webinar" : "/teleios"}
                   className={`${buttonBase} bg-caput-mortuum text-white shadow-lg hover:bg-opacity-90 focus-visible:ring-caput-mortuum focus-visible:ring-offset-linen`}
                 >
-                  {webinarUpcoming ? "Join the free webinar" : "Explore Teleios"}
+                  {webinarUpcoming ? "Join the webinar" : "Explore Teleios"}
                   <FaArrowRight
                     aria-hidden="true"
                     className="transition-transform duration-200 group-hover:translate-x-1"
@@ -197,18 +197,16 @@ export default async function Home() {
           <div className="container mx-auto px-6">
             <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-8">
-                <Eyebrow dark>Free live webinar</Eyebrow>
+                <Eyebrow dark>Live webinar</Eyebrow>
                 <h2
                   id="webinar-heading"
                   className="mt-4 text-balance text-3xl font-bold leading-tight tracking-tight md:text-4xl"
                 >
-                  Stop Chasing Remote Jobs.{" "}
-                  <span className="text-gold">
-                    Become the Engineer Global Teams Chase.
-                  </span>
+                  Become the Engineer{" "}
+                  <span className="text-gold">Global Teams Chase.</span>
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg text-white/75">
-                  A free live session for mid-level engineers on what separates
+                  A live session for mid-level engineers on what separates
                   senior engineers in the AI era, and how to close that gap.
                 </p>
                 <div className="mt-6">
@@ -227,7 +225,7 @@ export default async function Home() {
                   />
                 </Link>
                 <p className="mt-3 text-sm text-white/70">
-                  Free · Live · For working engineers
+                  Live · For working engineers
                 </p>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import { host, webinar } from "./config";
 
 const description = [
-  `Free live session with ${host.name} (Teleios).`,
+  `Live session with ${host.name} (Teleios).`,
   webinar.meetUrl
     ? `Join on ${webinar.platform}: ${webinar.meetUrl}`
     : `The ${webinar.platform} link is in your confirmation email. Can't find it? Check your spam folder.`,

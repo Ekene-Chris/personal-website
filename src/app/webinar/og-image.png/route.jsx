@@ -38,21 +38,19 @@ export function GET() {
             color: "#592429",
           }}
         >
-          Free live webinar
+          Live webinar
         </div>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            fontSize: 70,
-            lineHeight: 1.08,
-            letterSpacing: -1,
+            fontSize: 88,
+            lineHeight: 1.05,
+            letterSpacing: -1.5,
           }}
         >
-          <span>Stop Chasing Remote Jobs.</span>
-          <span style={{ color: "#592429" }}>
-            Become the Engineer Global Teams Chase.
-          </span>
+          <span>Become the Engineer</span>
+          <span style={{ color: "#592429" }}>Global Teams Chase.</span>
         </div>
         <div
           style={{
