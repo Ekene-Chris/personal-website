@@ -15,12 +15,11 @@ import RegistrationForm from "@/components/webinar/RegistrationForm";
 import { host, socialImage, webinar } from "@/lib/webinar/config";
 import { visibleStats, visibleTestimonials } from "@/lib/webinar/testimonials";
 
-const headline =
-  "Stop Chasing Remote Jobs. Become the Engineer Global Teams Chase.";
-const description = `A free live session for mid-level engineers on what separates senior engineers in the AI era, and how to close that gap. ${eventDateLabel}, ${eventTimeLabel}.`;
+const headline = "Become the Engineer Global Teams Chase.";
+const description = `A live session for mid-level engineers on what separates senior engineers in the AI era, and how to close that gap. ${eventDateLabel}, ${eventTimeLabel}.`;
 
 export const metadata = {
-  title: `Free Live Webinar: ${webinar.title} | Teleios`,
+  title: `Live Webinar: ${webinar.title} | Teleios`,
   description,
   alternates: { canonical: "/webinar/" },
   openGraph: {
@@ -72,7 +71,6 @@ const notForYou = [
 ];
 
 const registerPerks = [
-  "Free to attend",
   webinar.meetUrl
     ? `${webinar.platform} link as soon as you register`
     : `${webinar.platform} link sent to your inbox`,
@@ -168,16 +166,14 @@ export default function WebinarPage() {
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full bg-caput-mortuum"
             />
-            Free live webinar
+            Live webinar
           </p>
           <h1 className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            Stop Chasing Remote Jobs.{" "}
-            <span className="block text-caput-mortuum">
-              Become the Engineer Global Teams Chase.
-            </span>
+            Become the Engineer{" "}
+            <span className="block text-caput-mortuum">Global Teams Chase.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-black/75 md:text-xl">
-            A free live session for mid-level engineers on what separates
+            A live session for mid-level engineers on what separates
             senior engineers in the AI era, and how to close that gap.
           </p>
 
@@ -188,7 +184,7 @@ export default function WebinarPage() {
           <div className="mt-6 flex flex-col items-center">
             <SaveSeatLink />
             <p className="mt-4 text-sm font-medium text-black/70">
-              Free · Live · For working engineers
+              Live · For working engineers
             </p>
           </div>
 
@@ -465,7 +461,7 @@ export default function WebinarPage() {
         <div className="container mx-auto px-6">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-5 lg:gap-16">
             <div className="lg:sticky lg:top-12 lg:col-span-2 lg:self-start">
-              <Eyebrow dark>Free registration</Eyebrow>
+              <Eyebrow dark>Registration</Eyebrow>
               <h2
                 id="register-heading"
                 className="mt-4 text-balance text-3xl font-bold tracking-tight md:text-4xl"
@@ -538,7 +534,7 @@ export default function WebinarPage() {
             <SaveSeatLink light />
           </div>
           <p className="mt-4 text-sm text-white/80">
-            Free · Live · For working engineers
+            Live · For working engineers
           </p>
         </div>
       </section>
