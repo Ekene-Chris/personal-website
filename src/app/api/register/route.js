@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
-import { createBrevoContact as createContact } from "@/lib/brevo";
+import {
+  createBrevoContact as createContact,
+  sendBrevoTemplateEmail,
+} from "@/lib/brevo";
 import { createRateLimiter, getClientIp } from "@/lib/rate-limit";
 import { validateRegistration } from "@/lib/webinar/registration";
 
@@ -117,5 +120,37 @@ export async function POST(request) {
     return NextResponse.json({ error: GENERIC_ERROR }, { status: 502 });
   }
 
+  await sendConfirmationEmail(BREVO_API_KEY, values);
+
   return NextResponse.json({ ok: true });
+}
+
+// Sends the confirmation email (Brevo template BREVO_TEMPLATE_ID) once the
+// contact is saved. A failure here is logged rather than returned: the seat
+// is already saved and the thank-you page shows the joining link, so telling
+// the visitor registration failed would be wrong.
+async function sendConfirmationEmail(apiKey, { email, firstName }) {
+  const templateId = Number(process.env.BREVO_TEMPLATE_ID);
+  if (!Number.isInteger(templateId) || templateId < 1) {
+    console.error(
+      "[register] BREVO_TEMPLATE_ID is not set; no confirmation email sent"
+    );
+    return;
+  }
+
+  try {
+    const response = await sendBrevoTemplateEmail(apiKey, {
+      templateId,
+      to: [{ email, name: firstName }],
+    });
+    if (!response.ok) {
+      console.error(
+        "[register] Brevo didn't send the confirmation email",
+        response.status,
+        await response.text()
+      );
+    }
+  } catch (error) {
+    console.error("[register] Could not reach Brevo to send the email", error);
+  }
 }
