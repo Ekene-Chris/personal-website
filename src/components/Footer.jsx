@@ -1,17 +1,41 @@
-"use client";
-
 import Link from "next/link";
-import Image from "next/image";
 import { FaLinkedin, FaTwitter, FaGithub, FaGlobe } from "react-icons/fa6";
+import NewsletterForm from "./NewsletterForm";
+
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ekene-chris", Icon: FaLinkedin },
+  { label: "X (Twitter)", href: "https://x.com/iamekenechris", Icon: FaTwitter },
+  { label: "GitHub", href: "https://github.com/Ekene-Chris", Icon: FaGithub },
+  { label: "Website", href: "https://ekenechris.com", Icon: FaGlobe },
+];
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+];
+
+const resourceLinks = [
+  { label: "Teleios Platform", href: "https://jointeleios.com", external: true },
+  { label: "Teleios Fellowship", href: "/teleios" },
+  { label: "Tools & Guides", href: "/resources" },
+];
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  // Only offer the newsletter once its Brevo list is configured, so the form
+  // never silently fails.
+  const newsletterEnabled = Boolean(process.env.BREVO_NEWSLETTER_LIST_ID);
 
   return (
     <footer className="bg-white text-black border-t border-gray-200">
       <div className="container mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div
+          className={`py-12 grid grid-cols-1 gap-8 ${
+            newsletterEnabled ? "md:grid-cols-4" : "md:grid-cols-3"
+          }`}
+        >
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center mb-4">
@@ -24,38 +48,18 @@ export const Footer = () => {
               the global tech landscape.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="https://www.linkedin.com/in/ekene-chris"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gold transition"
-              >
-                <FaLinkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://x.com/iamekenechris"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gold transition"
-              >
-                <FaTwitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://github.com/Ekene-Chris"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gold transition"
-              >
-                <FaGithub className="h-5 w-5" />
-              </a>
-              <a
-                href="https://ekenechris.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gold transition"
-              >
-                <FaGlobe className="h-5 w-5" />
-              </a>
+              {socials.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-gray-500 hover:text-gold transition"
+                >
+                  <Icon aria-hidden="true" className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -65,30 +69,16 @@ export const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-600 hover:text-black transition"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-gray-600 hover:text-black transition"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-gray-600 hover:text-black transition"
-                >
-                  Blog
-                </Link>
-              </li>
+              {quickLinks.map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-gray-600 hover:text-black transition"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -98,57 +88,42 @@ export const Footer = () => {
               Resources
             </h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://jointeleios.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-black transition"
-                >
-                  Teleios Platform
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/engineering-excellence"
-                  className="text-gray-600 hover:text-black transition"
-                >
-                  Engineering Excellence
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/mentorship"
-                  className="text-gray-600 hover:text-black transition"
-                >
-                  Mentorship
-                </Link>
-              </li>
+              {resourceLinks.map(({ label, href, external }) => (
+                <li key={href}>
+                  {external ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-black transition"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      className="text-gray-600 hover:text-black transition"
+                    >
+                      {label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Newsletter */}
-          <div className="col-span-1 md:col-span-1">
-            <h3 className="font-bold text-lg mb-4 text-caput-mortuum">
-              Join My Newsletter
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Get the latest career advancement tips and technical insights.
-            </p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-2 w-full bg-gray-100 border border-gray-200 text-gray-800 rounded-l focus:outline-none focus:ring-1 focus:ring-caput-mortuum"
-              />
-              <button
-                type="submit"
-                className="bg-caput-mortuum hover:bg-opacity-90 text-white px-4 py-2 rounded-r"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+          {newsletterEnabled && (
+            <div className="col-span-1 md:col-span-1">
+              <h3 className="font-bold text-lg mb-4 text-caput-mortuum">
+                Join My Newsletter
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Get the latest career advancement tips and technical insights.
+              </p>
+              <NewsletterForm />
+            </div>
+          )}
         </div>
 
         {/* Brand Values */}
@@ -159,24 +134,10 @@ export const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="py-4 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-500">
+        <div className="py-4 border-t border-gray-200">
+          <p className="text-sm text-gray-500 text-center md:text-left">
             &copy; {currentYear} Ekene Chris. All rights reserved.
           </p>
-          <div className="mt-2 md:mt-0">
-            <Link
-              href="/privacy"
-              className="text-sm text-gray-500 hover:text-gray-700 mr-4"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-sm text-gray-500 hover:text-gray-700"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -9,6 +9,10 @@ import {
   FaStar,
   FaCheckCircle
 } from "react-icons/fa";
+import { getUpcomingCohortDate } from "@/lib/teleios";
+
+// Rebuild hourly so the cohort date drops off soon after it passes.
+export const revalidate = 3600;
 
 export const metadata = {
   title: "Teleios Program | Ekene Chris",
@@ -16,6 +20,8 @@ export const metadata = {
 };
 
 export default function Teleios() {
+  const cohortDate = getUpcomingCohortDate();
+
   return (
     <div className="pt-20 bg-linen min-h-screen">
       {/* Hero Section - Redesigned */}
@@ -42,7 +48,9 @@ export default function Teleios() {
               <div className="inline-block">
                 <span className="px-4 py-2 bg-gold/30 backdrop-blur-sm border border-gold rounded-full text-sm font-medium flex items-center gap-2 w-fit">
                   <FaStar className="text-gold" />
-                  Next Cohort: January 2026
+                  {cohortDate
+                    ? `Next Cohort: ${cohortDate}`
+                    : "Waitlist Open for the Next Cohort"}
                 </span>
               </div>
 
@@ -90,7 +98,7 @@ export default function Teleios() {
                   target="_blank"
                   className="group px-8 py-4 bg-gradient-to-r from-gold to-gold/80 hover:from-gold/90 hover:to-gold text-black rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center justify-center gap-2"
                 >
-                  Join Waitlist for January 2026
+                  Join the Waitlist
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
@@ -264,7 +272,9 @@ export default function Teleios() {
                   <span className="text-gold">Limited to 50 participants only</span>
                 </p>
                 <p className="text-xl text-gray-300">
-                  Next cohort begins January 2026
+                  {cohortDate
+                    ? `Next cohort begins ${cohortDate}`
+                    : "Join the waitlist to hear when the next cohort opens"}
                 </p>
               </div>
             </div>
@@ -277,7 +287,7 @@ export default function Teleios() {
               target="_blank"
               className="group inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-gold to-gold/80 hover:from-gold/90 hover:to-gold text-black rounded-lg font-bold text-xl transition-all duration-300 shadow-lg hover:shadow-gold/50"
             >
-              Join the January 2026 Waitlist
+              Join the Waitlist
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
